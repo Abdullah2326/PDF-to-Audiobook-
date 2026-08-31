@@ -21,7 +21,7 @@ if not PDF_FILE:
 file_name = os.path.splitext(os.path.basename(PDF_FILE))[0]
 OUTPUT_FILE = file_name + " audiobook.wav"
 
-VOICE = r"D:\\PDF to audio book\\Different voice mods\\en_US-amy-medium.onnx" # you have to add path of the piper voice .onnx file
+VOICE = r"en_US-amy-medium.onnx" # you have to add path of the piper voice .onnx file if not in same folder
     
 
 # Maximum approximate characters per TTS chunk
@@ -140,7 +140,7 @@ def create_audiobook(text):
 
     voice = PiperVoice.load(
         VOICE,
-        config_path="D:\\PDF to audio book\\Different voice mods\\en_US-amy-medium.onnx.json") # you have to add path of the piper voice .json file
+        config_path="en_US-amy-medium.onnx.json") # you have to add path of the piper voice .json file if not in same folder
     chunks = split_text(text, CHUNK_SIZE)
 
     print()
